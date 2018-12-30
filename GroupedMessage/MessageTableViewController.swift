@@ -10,20 +10,39 @@ import UIKit
 
 class MessageTableViewController: UITableViewController {
     
-    let chatMessages = [
-        [
-            ChatMessage(text: "Here's my first message", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019")),
-            ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "01/01/2019")),
-            ChatMessage(text: "That's my third message and I'm going to message another long message that will word wrap", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019"))],
-        [
-            ChatMessage(text: "Yo, dawg, whaddup!", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019")),
-            ChatMessage(text: "This message should appear on the right side with a dark gray background bubble", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019"))],
-        [
-            ChatMessage(text: "And this is my answer on the left side", isIncoming: true, date: Date.dateFromCustomString(customString: "01/03/2019"))]
+    let messagesFromServer = [
+        ChatMessage(text: "Here's my first message", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019")),
+        ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "01/01/2019")),
+        ChatMessage(text: "That's my third message and I'm going to message another long message that will word wrap", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019")),
+        ChatMessage(text: "Yo, dawg, whaddup!", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019")),
+        ChatMessage(text: "This message should appear on the right side with a dark gray background bubble", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019")),
+        ChatMessage(text: "And this is my answer on the left side", isIncoming: true, date: Date.dateFromCustomString(customString: "01/03/2019"))
     ]
+    
+    var chatMessages = [[ChatMessage]]()
+    
+    private func attemptToAssembleGroupedMessages() {
+        let groupedMessages = Dictionary(grouping: messagesFromServer) { (element) -> Date in
+            return element.date // [Date : [ChatMessage]]
+        }
+        print("groupedMessages: \(groupedMessages)")
+        
+        let sortedKeys = groupedMessages.keys.sorted()
+        sortedKeys.forEach { (key) in
+            print("Key in sorted dictionary: \(key)")
+            let values = groupedMessages[key]
+            print(values ?? "")
+            
+            chatMessages.append(values ?? [])
+        }
+        
+        print("Chat Messages: \(chatMessages)")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        attemptToAssembleGroupedMessages()
         
         navigationItem.title = "Messages"
         navigationController?.navigationBar.prefersLargeTitles = true
