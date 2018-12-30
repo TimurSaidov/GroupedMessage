@@ -11,11 +11,16 @@ import UIKit
 class MessageTableViewController: UITableViewController {
     
     let chatMessages = [
-        ChatMessage(text: "Here's my first message", isIncoming: true),
-        ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: false),
-        ChatMessage(text: "That's my third message and I'm going to message another long message that will word wrap", isIncoming: true),
-        ChatMessage(text: "Yo, dawg, whaddup!", isIncoming: false),
-        ChatMessage(text: "This message should appear on the right side with a dark gray background bubble", isIncoming: false)]
+        [
+            ChatMessage(text: "Here's my first message", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019")),
+            ChatMessage(text: "I'm going to message another long message that will word wrap", isIncoming: false, date: Date.dateFromCustomString(customString: "01/01/2019")),
+            ChatMessage(text: "That's my third message and I'm going to message another long message that will word wrap", isIncoming: true, date: Date.dateFromCustomString(customString: "01/01/2019"))],
+        [
+            ChatMessage(text: "Yo, dawg, whaddup!", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019")),
+            ChatMessage(text: "This message should appear on the right side with a dark gray background bubble", isIncoming: false, date: Date.dateFromCustomString(customString: "01/02/2019"))],
+        [
+            ChatMessage(text: "And this is my answer on the left side", isIncoming: true, date: Date.dateFromCustomString(customString: "01/03/2019"))]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +38,24 @@ class MessageTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return chatMessages.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let firstMessageInSection = chatMessages[section].first {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            let dateString = dateFormatter.string(from: firstMessageInSection.date)
+            
+            return dateString
+        }
+        
+        return "Section \(section)"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return chatMessages.count
+        return chatMessages[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,8 +63,7 @@ class MessageTableViewController: UITableViewController {
         
         cell.backgroundColor = .clear
 
-        let chatMessage = chatMessages[indexPath.row]
-        
+        let chatMessage = chatMessages[indexPath.section][indexPath.row]
         cell.chatMessage = chatMessage
         
         return cell

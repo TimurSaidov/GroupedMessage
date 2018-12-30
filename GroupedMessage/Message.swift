@@ -11,4 +11,13 @@ import Foundation
 struct ChatMessage {
     let text: String
     let isIncoming: Bool
+    let date: Date
+}
+
+extension Date {
+    static func dateFromCustomString(customString: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.date(from: customString) ?? Date()
+    }
 }
