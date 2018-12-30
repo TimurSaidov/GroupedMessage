@@ -14,6 +14,7 @@
 		39D175CC21D8E5A400A7ACB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D175CA21D8E5A400A7ACB1 /* LaunchScreen.storyboard */; };
 		39D175D421D8E63700A7ACB1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175D321D8E63700A7ACB1 /* Message.swift */; };
 		39D175D621D8E66000A7ACB1 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */; };
+		39D175D821D8F44500A7ACB1 /* DateHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175D721D8F44500A7ACB1 /* DateHeaderLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		39D175CD21D8E5A400A7ACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39D175D321D8E63700A7ACB1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		39D175D721D8F44500A7ACB1 /* DateHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				39D175C121D8E5A100A7ACB1 /* AppDelegate.swift */,
 				39D175D321D8E63700A7ACB1 /* Message.swift */,
+				39D175D721D8F44500A7ACB1 /* DateHeaderLabel.swift */,
 				39D175C321D8E5A100A7ACB1 /* MessageTableViewController.swift */,
 				39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */,
 				39D175C521D8E5A100A7ACB1 /* Main.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39D175D421D8E63700A7ACB1 /* Message.swift in Sources */,
+				39D175D821D8F44500A7ACB1 /* DateHeaderLabel.swift in Sources */,
 				39D175D621D8E66000A7ACB1 /* MessageTableViewCell.swift in Sources */,
 				39D175C421D8E5A100A7ACB1 /* MessageTableViewController.swift in Sources */,
 				39D175C221D8E5A100A7ACB1 /* AppDelegate.swift in Sources */,

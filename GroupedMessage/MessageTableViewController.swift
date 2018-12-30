@@ -41,6 +41,37 @@ class MessageTableViewController: UITableViewController {
         return chatMessages.count
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let firstMessageInSection = chatMessages[section].first {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            let dateString = dateFormatter.string(from: firstMessageInSection.date)
+            
+            let label = DateHeaderLabel()
+            label.backgroundColor = .black
+            label.text = dateString
+            label.font = UIFont.boldSystemFont(ofSize: 14)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.translatesAutoresizingMaskIntoConstraints = false
+            
+            let containerView = UIView()
+            
+            containerView.addSubview(label)
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+            
+            return containerView
+        }
+        
+        return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    /*
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let firstMessageInSection = chatMessages[section].first {
             let dateFormatter = DateFormatter()
@@ -52,6 +83,7 @@ class MessageTableViewController: UITableViewController {
         
         return "Section \(section)"
     }
+     */
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
