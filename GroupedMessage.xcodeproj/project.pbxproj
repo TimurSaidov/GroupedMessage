@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		39D175C221D8E5A100A7ACB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175C121D8E5A100A7ACB1 /* AppDelegate.swift */; };
-		39D175C421D8E5A100A7ACB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175C321D8E5A100A7ACB1 /* ViewController.swift */; };
+		39D175C421D8E5A100A7ACB1 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175C321D8E5A100A7ACB1 /* MessageTableViewController.swift */; };
 		39D175C721D8E5A100A7ACB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D175C521D8E5A100A7ACB1 /* Main.storyboard */; };
 		39D175C921D8E5A400A7ACB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D175C821D8E5A400A7ACB1 /* Assets.xcassets */; };
 		39D175CC21D8E5A400A7ACB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39D175CA21D8E5A400A7ACB1 /* LaunchScreen.storyboard */; };
+		39D175D421D8E63700A7ACB1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175D321D8E63700A7ACB1 /* Message.swift */; };
+		39D175D621D8E66000A7ACB1 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39D175BE21D8E5A100A7ACB1 /* GroupedMessage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupedMessage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D175C121D8E5A100A7ACB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39D175C321D8E5A100A7ACB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39D175C321D8E5A100A7ACB1 /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		39D175C621D8E5A100A7ACB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39D175C821D8E5A400A7ACB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39D175CB21D8E5A400A7ACB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39D175CD21D8E5A400A7ACB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39D175D321D8E63700A7ACB1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				39D175C121D8E5A100A7ACB1 /* AppDelegate.swift */,
-				39D175C321D8E5A100A7ACB1 /* ViewController.swift */,
+				39D175D321D8E63700A7ACB1 /* Message.swift */,
+				39D175C321D8E5A100A7ACB1 /* MessageTableViewController.swift */,
+				39D175D521D8E66000A7ACB1 /* MessageTableViewCell.swift */,
 				39D175C521D8E5A100A7ACB1 /* Main.storyboard */,
 				39D175C821D8E5A400A7ACB1 /* Assets.xcassets */,
 				39D175CA21D8E5A400A7ACB1 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39D175C421D8E5A100A7ACB1 /* ViewController.swift in Sources */,
+				39D175D421D8E63700A7ACB1 /* Message.swift in Sources */,
+				39D175D621D8E66000A7ACB1 /* MessageTableViewCell.swift in Sources */,
+				39D175C421D8E5A100A7ACB1 /* MessageTableViewController.swift in Sources */,
 				39D175C221D8E5A100A7ACB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
